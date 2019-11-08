@@ -1,0 +1,14 @@
+{
+  "uri": "https://bicon.net.solidwallet.io/api/v3",
+  "nid": "0x3",
+  "keyStore": "keystores/<YOUR_WALLET_KEYSTORE_FILE>",
+  "from": "<YOUR_WALLET_ADDRESS>,
+  "to": "cx0000000000000000000000000000000000000000",
+  "stepLimit": "0x50000000",
+  "deploy": {
+    "contentType": "tbears",
+    "mode": "install"
+  },
+  "txresult": {},
+  "transfer": {}
+}

@@ -1,0 +1,18 @@
+{
+  "jsonrpc": "2.0",
+  "method": "icx_sendTransaction",
+  "params": {
+    "version": "0x3",
+    "from": "<YOUR_WALLET_ADDRESS>",
+    "value": "0xfffff05b59d3b2",
+    "stepLimit": "0x200000",
+    "nid": "0x3",
+    "nonce": "0x2",
+    "to": "<SCORE_ADDRESS>",
+    "dataType": "call",
+    "data": {
+      "method": "set_treasury"
+    }
+  },
+  "id": 1
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <title>Slot Machine</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default topbar-bot">
+      <div class="container-fluid">
+        <div class="navbar-header flex-topbar">
+          <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='img/icon-logo.png') }}" />
+            <img src="{{ url_for('static', filename='img/mlh-logo.svg') }}" width="80" />
+          </a>
+          <p class="navbar-text">Icon Casino - Slot Machine!</p>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container slot-machine--container">
+      <div class="slot-machine">
+        <div class="slot-machine--prize-display">
+          <span id="slot-machine--prize">
+            0
+          </span>
+          <span id="slot-machine--prize-label">
+            Prize
+          </span>
+        </div>
+        <div class="slot-machine--title">
+          <h1>ICON Casino</h1>
+        </div>
+        <div class="slot-machine--slots">
+          <div class="slot-machine--slot--container" id="slot-machine--slot-0">
+            <span class="slot-machine--slot slot-machine--slot-result-0"
+              >0</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-1"
+              >1</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-2"
+              >2</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-3"
+              >3</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-4"
+              >4</span
+            >
+          </div>
+          <div class="slot-machine--slot--container" id="slot-machine--slot-1">
+            <span class="slot-machine--slot slot-machine--slot-result-0"
+              >0</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-1"
+              >1</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-2"
+              >2</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-3"
+              >3</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-4"
+              >4</span
+            >
+          </div>
+          <div class="slot-machine--slot--container" id="slot-machine--slot-2">
+            <span class="slot-machine--slot slot-machine--slot-result-0"
+              >0</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-1"
+              >1</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-2"
+              >2</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-3"
+              >3</span
+            >
+            <span class="slot-machine--slot slot-machine--slot-result-4"
+              >4</span
+            >
+          </div>
+        </div>
+        <div class="slot-machine--result-display" id="slot-machine--result">
+          Press GO! to play
+        </div>
+        <div class="slot-machine--actions">
+          <div id="slot-machine--credits-container">
+            <span id="slot-machine--credits">0</span>
+            <span id="slot-machine--credits-label"
+              >Credits (1 credit = 0.001 ICX)</span
+            >
+          </div>
+          <div id="slot-machine--bet-value-container">
+            <span id="slot-machine--bet-value">1</span>
+            <span id="slot-machine--bet-value-label">Bet Value</span>
+          </div>
+
+          <div id="slot-machine--bet-value-multiplier-container">
+            <button
+              type="button"
+              id="button--increase-multiplier"
+              class="slot-machine--increase-multiplier-button"
+            >
+              +
+            </button>
+
+            <button
+              type="button"
+              id="button--decrease-multiplier"
+              class="slot-machine--decrease-multiplier-button"
+            >
+              -
+            </button>
+          </div>
+          <button
+            type="button"
+            id="button--play"
+            class="slot-machine--play-button"
+            disabled="disabled"
+          >
+            GO!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery-slotmachine@4.0.1/dist/slotmachine.min.js"
+      integrity="sha256-68LInizA2rmZ2k0pc2xHvBj9Iiy/D602v5IYTrqqdh8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery-slotmachine@4.0.1/dist/jquery.slotmachine.js"
+      integrity="sha256-la3jinIg9GAOI/kNKDHv1Fk4rbZKK4EWZf02bOKj4+Y="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jquery-slotmachine@4.0.1/dist/jquery.slotmachine.min.css"
+      integrity="sha256-jXOPo/+jljTlplbPgBRHhrObjSn3Qk1MfknQVcS3MbA="
+      crossorigin="anonymous"
+    />
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>

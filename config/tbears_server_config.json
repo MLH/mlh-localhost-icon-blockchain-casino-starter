@@ -1,0 +1,33 @@
+{
+    "hostAddress": "https://bicon.net.solidwallet.io/api/v3",
+    "port": 9000,
+    "scoreRootPath": "./.score",
+    "stateDbRootPath": "./.statedb",
+    "log": {
+        "logger": "tbears",
+        "level": "info",
+        "filePath": "./tbears.log",
+        "colorLog": true,
+        "outputType": "file"
+    },
+    "service": {
+        "fee": false,
+        "audit": false,
+        "deployerWhiteList": false
+    },
+    "genesis": {
+        "nid": "0x03",
+        "accounts": [
+            {
+                "name": "genesis",
+                "address": "hx0000000000000000000000000000000000000000",
+                "balance": "0x2961fff8ca4a62327800000"
+            },
+            {
+                "name": "fee_treasury",
+                "address": "hx1000000000000000000000000000000000000000",
+                "balance": "0x0"
+            }
+        ]
+    }
+}

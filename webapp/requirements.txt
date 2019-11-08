@@ -1,0 +1,3 @@
+Flask==1.1.1
+iconsdk==1.1.0
+python-dotenv==0.10.3
