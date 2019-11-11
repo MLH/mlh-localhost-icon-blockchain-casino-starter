@@ -65,7 +65,6 @@
 
     updateBalance(balance = 0, { animate = false, hasWon = false } = {}) {
       const credits = Math.floor(balance / CREDIT_IN_ICX);
-      console.log(credits.toString());
       if (animate) {
         this.getCreditsDisplay().addClass(
           `updating ${hasWon ? "win" : "loss"}`
@@ -127,7 +126,6 @@
           var slots = [Math.floor(Math.random() * 4) + 2, Math.floor(Math.random() * 2), Math.floor(Math.random() * 4)];
           
         }
-        console.log(slots)
         this.stopSlots(slots);
         this.updateDisplay(hasWon ? "WON" : "LOST", hasWon ? "win" : "loss");
         this.updateBalance(balance, { animate: true });
