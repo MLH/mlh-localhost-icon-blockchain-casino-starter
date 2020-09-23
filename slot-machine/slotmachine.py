@@ -53,9 +53,9 @@ class SlotMachine(IconScoreBase):
         if amount <= 0 or amount > 10 ** 24:
             revert(f"Betting amount {amount} out of range.")
             
+        payout = min(amount * PAYOUT_MULTIPLIER, balance)
+            
         # Add code here!
-
-payout = min(amount * PAYOUT_MULTIPLIER, balance)
 
     @external(readonly=True)
     def get_results(self) -> dict:
