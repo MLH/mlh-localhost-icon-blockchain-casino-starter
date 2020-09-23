@@ -43,7 +43,19 @@ class SlotMachine(IconScoreBase):
     @payable
     @external
     def play(self):
-        # Write code here!
+        amount = self.msg.value
+        balance = self.icx.get_balance(self.address)
+        Logger.info(f"Current Balance {balance}.", TAG)
+        
+        if balance <= amount * PAYOUT_MULTIPLIER:
+            revert(f"Balance {balance} not enough to pay a prize.")
+            
+        if amount <= 0 or amount > 10 ** 24:
+            revert(f"Betting amount {amount} out of range.")
+            
+        # Add code here!
+
+payout = min(amount * PAYOUT_MULTIPLIER, balance)
 
     @external(readonly=True)
     def get_results(self) -> dict:
